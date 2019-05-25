@@ -32,7 +32,7 @@ public class fbgrowthmodel  {
     }
  {
          SparkSession session =SparkSession.builder()
-                 .appName("fbgrowthmodel").config("spark.sql.warehouse.dir","file:///D://")
+                 .appName("fbgrowthmodel").config("spark.sql.warehouse.dir","file:///your Directory//")
                  .master("local[*]")
                  .getOrCreate();
          
@@ -40,7 +40,7 @@ public class fbgrowthmodel  {
 
    Dataset<Row> data = session
                 .read().option("header", "true")
-           .csv("C://Users//Sayed//Documents//NetBeansProjects//retail.dat");
+           .csv("your data set path");
         data.show();   
        JavaRDD<retail> data1;
         data1 = data.toJavaRDD().map((Row t1) -> {
